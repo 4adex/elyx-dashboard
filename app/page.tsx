@@ -209,11 +209,6 @@ export default function MemberJourneyDashboard() {
                                 >
                                   <div className="w-full">
                                     <div className="font-medium text-sm mb-1">Conversation {idx + 1}</div>
-                                    <div className="text-xs text-gray-500 leading-relaxed line-clamp-2 break-words">
-                                      {conv.patient_query.length > 80
-                                        ? `${conv.patient_query.substring(0, 80)}...`
-                                        : conv.patient_query}
-                                    </div>
                                   </div>
                                 </Button>
                               ))}
@@ -336,9 +331,7 @@ export default function MemberJourneyDashboard() {
                         <h3 className="font-semibold mb-3">Week {week.week_metadata.week_number} Decisions</h3>
                         {week.conversations.map((conv, convIdx) => (
                           <div key={convIdx} className="mb-4 p-3 bg-gray-50 rounded-lg">
-                            <div className="font-medium text-sm mb-2">
-                              Decision Context: {conv.patient_query.substring(0, 100)}...
-                            </div>
+                            
                             <div className="space-y-2">
                               {conv.conversation_history
                                 .filter((msg) => msg.role !== "patient")
