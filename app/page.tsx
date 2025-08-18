@@ -41,20 +41,22 @@ export default function MemberJourneyDashboard() {
   }))
 
   const agentInteractionData = [
-    { name: "Ruby (Concierge)", value: 35, color: "#8b5cf6" },
-    { name: "Rachel (Physiotherapist)", value: 25, color: "#06b6d4" },
-    { name: "Advik (Data Analyst)", value: 20, color: "#10b981" },
-    { name: "Carla (Nutritionist)", value: 15, color: "#f59e0b" },
-    { name: "Dr. Warren", value: 5, color: "#ef4444" },
+    { name: "Ruby (Concierge)", value: 47, color: "#8b5cf6" },
+    { name: "Advik (Data Analyst)", value: 28, color: "#10b981" },
+    { name: "Dr. Warren", value: 12, color: "#ef4444" },
+    { name: "Carla (Nutritionist)", value: 9, color: "#f59e0b" },
+    { name: "Rachel (Physiotherapist)", value: 3, color: "#06b6d4" },
+    { name: "Neel", value: 2, color: "#6b7280" },
   ]
 
   const getAgentColor = (role: string) => {
-    const colors = {
+    const colors: Record<string, string> = {
       concierge: "bg-purple-100 text-purple-800",
       rachel: "bg-cyan-100 text-cyan-800",
       advik: "bg-emerald-100 text-emerald-800",
       carla: "bg-amber-100 text-amber-800",
       dr_warren: "bg-red-100 text-red-800",
+      neel: "bg-gray-100 text-gray-800",
       patient: "bg-blue-100 text-blue-800",
     }
     return colors[role] || "bg-gray-100 text-gray-800"
@@ -72,6 +74,8 @@ export default function MemberJourneyDashboard() {
         return "🥗"
       case "dr_warren":
         return "👨‍⚕️"
+      case "neel":
+        return "🔧"
       case "patient":
         return "👤"
       default:
